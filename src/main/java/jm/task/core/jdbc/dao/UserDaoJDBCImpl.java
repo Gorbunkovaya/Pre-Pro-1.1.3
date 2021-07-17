@@ -50,7 +50,6 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public List<User> getAllUsers() throws SQLException {
-
         List<User> list = new ArrayList<User>();
         try (PreparedStatement prepStatement = connection.prepareStatement("SELECT * FROM useruser")) {
             ResultSet resultSet = prepStatement.executeQuery("SELECT * FROM useruser");
