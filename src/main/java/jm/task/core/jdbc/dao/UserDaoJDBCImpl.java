@@ -34,12 +34,12 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void saveUser(String name, String lastName, byte age) throws SQLException {
-        String insertData = "INSERT INTO useruser (name, lastName, age) VALUES (?, ?, ?)";
-        try (PreparedStatement prepStatement = connection.prepareStatement(insertData)) {
+        try (PreparedStatement prepStatement = connection.prepareStatement("INSERT INTO useruser (name, lastName, age) VALUES (?, ?, ?)")) {
             prepStatement.setString(1, name);
             prepStatement.setString(2, lastName);
             prepStatement.setByte(3, age);
             prepStatement.executeUpdate();
+            System.out.println("User с именем – " + name + " добавлен в базу данных");
         }
     }
 

@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class Util {
 
-    private static String url = "jdbc:mysql://localhost:3306/user_schema";
-    private static String login = "root";
-    private static String password = "rooot";
+    private static final String url = "jdbc:mysql://localhost:3306/user_schema";
+    private static final String login = "root";
+    private static final String password = "rooot";
 
     public static Connection getMySQLConnection() {
 
