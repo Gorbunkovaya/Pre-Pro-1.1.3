@@ -1,5 +1,30 @@
 package jm.task.core.jdbc.util;
 
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 public class Util {
-    // реализуйте настройку соеденения с БД
+
+    private static String url = "jdbc:mysql://localhost:3306/user_schema";
+    private static String login = "root";
+    private static String password = "rooot";
+
+    public static Connection getMySQLConnection() {
+
+        Connection connection = null;
+
+        try {
+            Driver driver = new com.mysql.cj.jdbc.Driver();
+            DriverManager.registerDriver(driver);
+            connection = DriverManager.getConnection(url, login, password);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return connection;
+    }
 }
+
+
