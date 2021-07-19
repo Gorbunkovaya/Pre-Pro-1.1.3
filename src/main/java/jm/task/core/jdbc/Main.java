@@ -3,6 +3,7 @@ package jm.task.core.jdbc;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
+
 import java.sql.*;
 import java.util.List;
 
@@ -26,7 +27,6 @@ public class Main {
         userService.saveUser(user4.getName(), user4.getLastName(), user4.getAge());
 
         List<User> users = userService.getAllUsers();
-        System.out.println(users);
 
         userService.cleanUsersTable();
 
